@@ -40,8 +40,7 @@ pipeline {
         sh 'docker push pallavic9/healthcare:1.0'
             }
       }
-  
-  stage('AWS-Login') {
+    stage('AWS-Login') {
       steps {
         withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awsaccess', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
          }
